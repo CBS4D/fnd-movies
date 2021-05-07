@@ -20,7 +20,7 @@ CONFIG = get_config(os.getenv("ENV", "development"))
 
 class Movies(Resource):
 
-    # method_decorators = [is_admin, jwt_required()]
+    method_decorators = [is_admin, jwt_required()]
 
     def get_existing_genres(self, genres):
         try:

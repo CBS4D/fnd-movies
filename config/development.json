@@ -1,0 +1,7 @@
+{
+    "DEBUG": true,
+    "PORT": 5005,
+    "SQLALCHEMY_DATABASE_URI": "postgresql://rmluser:rml@123@localhost:5432/my_db",
+    "SQLALCHEMY_TRACK_MODIFICATIONS": false,
+    "SECRET_KEY": "secret"
+}

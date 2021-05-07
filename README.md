@@ -20,8 +20,6 @@ To create admin user please first generate an admin key and then using that key 
 - Marshmallow
 - Flask-jwt-extended
 - PostgrSQL
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
 
 ## Installation
 

@@ -126,12 +126,13 @@ class Movies(Resource):
             valid_data = movie_schema.load(data)
             
             existing_movie_record = MovieModel.search_object(id=valid_data["id"]).first()
-            existing_movie_record.delete_object()
-            existing_movie_dump = movie_schema.dump(existing_movie_record)
-
+            
             if not existing_movie_record:
                 return make_response(jsonify(
                 {"result": "failed", "reason": "record not found to update"}), 404)
+            
+            existing_movie_record.delete_object()
+            existing_movie_dump = movie_schema.dump(existing_movie_record)
             
             new_genres = valid_data.get('genres')
             if new_genres:

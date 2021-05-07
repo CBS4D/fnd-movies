@@ -25,7 +25,7 @@ def create_app(config_name):
     jwt.init_app(app)
     app.config.update(get_config(config_name))
     # postgres database url for heroku deployment
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('postgres', 'postgresql')
     
     #bind database objectc to flask app
     db.init_app(app)
